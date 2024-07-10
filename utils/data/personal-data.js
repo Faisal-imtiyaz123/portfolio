@@ -1,7 +1,6 @@
 export const linkedIn ="https://www.linkedin.com/feed/update/urn:li:activity:7194594630150070272/"
 export const personalData = {
   name: "Faisal Imtiyaz",
-  profile: '/profile.png',
   designation: "Software Developer",
   email: 'supreme.realm.2003@gmail.com',
   phone: '+91 6006086592',
