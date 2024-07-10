@@ -37,3 +37,18 @@ body {
   // padding-top: calc(var(--index) * 2.5rem);
   top: calc(var(--index) * 4rem);
 }
+.navbar {
+  background-color: rgba(255, 255, 255, 0.15); // Semi-transparent white
+  backdrop-filter: blur(10px);
+  border-radius: 10px; // Optional: for rounded corners
+  padding: 1rem; // Adjust padding as needed
+  position: sticky;
+  top: 0;
+  z-index: 1000; // Ensure navbar is above other content
+}
+
+// Ensure the navbar text is visible against the light background
+.navbar a {
+  color: var(--foreground-rgb); // Use the defined foreground color for contrast
+  text-decoration: none;
+}

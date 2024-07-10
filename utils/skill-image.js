@@ -41,7 +41,7 @@ import materialui from '/public/svg/skills/materialui.svg';
 import matlab from '/public/svg/skills/matlab.svg';
 import memsql from '/public/svg/skills/memsql.svg';
 import microsoftoffice from '/public/svg/skills/microsoftoffice.svg';
-import mongoDB from '/public/svg/skills/mongoDB.svg';
+import mongoDB from '/public/svg/skills/mongodb-icon.svg';
 import mysql from '/public/svg/skills/mysql.svg';
 import nextJS from '/public/svg/skills/nextJS.svg';
 import nginx from '/public/svg/skills/nginx.svg';
@@ -72,11 +72,15 @@ import vuetifyjs from '/public/svg/skills/vuetifyjs.svg';
 import webix from '/public/svg/skills/webix.svg';
 import wolframalpha from '/public/svg/skills/wolframalpha.svg';
 import wordpress from '/public/svg/skills/wordpress.svg';
+import node from "/public/svg/skills/nodejs.svg";
+
 
 
 export const skillsImage = (skill) => {
   const skillID = skill.toLowerCase();
   switch (skillID) {
+    case 'node':
+      return node;
     case 'gcp':
       return gcp;
     case 'html':

@@ -4,7 +4,7 @@ import { isValidEmail } from '@/utils/check-email';
 import axios from 'axios';
 import { useState } from 'react';
 import { TbMailForward } from "react-icons/tb";
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
 
 function ContactWithoutCaptcha() {
   const [error, setError] = useState({ email: false, required: false });
@@ -36,10 +36,12 @@ function ContactWithoutCaptcha() {
     const options = { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY };
 
     try {
+      toast.loading("Sending message...")
       const res = await emailjs.send(serviceID, templateID, userInput, options);
       const teleRes = await axios.post(`${process.env.NEXT_PUBLIC_APP_URL}/api/contact`, userInput);
 
       if (res.status === 200 || teleRes.status === 200) {
+        toast.dismiss()
         toast.success('Message sent successfully!');
         setUserInput({
           name: '',
@@ -48,18 +50,20 @@ function ContactWithoutCaptcha() {
         });
       };
     } catch (error) {
+      toast.dismiss()
       toast.error(error?.text || error);
+
     };
   };
 
   return (
     <div className="">
       <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
-        Contact with me
+        Contact me
       </p>
       <div className="max-w-3xl text-white rounded-lg border border-[#464c6a] p-3 lg:p-5">
         <p className="text-sm text-[#d3d8e8]">
-          {"If you have any questions or concerns, please don't hesitate to contact me. I am open to any work opportunities that align with my skills and interests."}
+          {"In case of any query, please don't hesitate to contact me. Drop a message."}
         </p>
         <div className="mt-6 flex flex-col gap-4">
           <div className="flex flex-col gap-2">
